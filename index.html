@@ -172,38 +172,52 @@
     </footer>
 
     <script>
-        // 언어 전환 기능
-        let currentLang = 'ko';
-        function toggleLanguage() {
-            const koElements = document.querySelectorAll('.lang-ko');
-            const enElements = document.querySelectorAll('.lang-en');
-            const toggleBtn = document.querySelector('.lang-toggle');
+    // 1. 기본 시작 언어를 '영어(en)'로 고정
+    let currentLang = 'en';
 
-            if (currentLang === 'ko') {
-                koElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-                toggleBtn.innerText = 'KR';
-                currentLang = 'en';
-            } else {
-                koElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-                toggleBtn.innerText = 'EN';
-                currentLang = 'ko';
-            }
-        }
+    // 2. 홈페이지가 처음 열릴 때 무조건 영어를 띄우도록 설정
+    document.addEventListener('DOMContentLoaded', () => {
+        const koElements = document.querySelectorAll('.lang-ko');
+        const enElements = document.querySelectorAll('.lang-en');
+        const toggleBtn = document.querySelector('.lang-toggle');
 
-        // 메인 배너 슬라이드 자동 전환 기능 (5장 순환)
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+        // 한국어는 숨기고 영어는 보이게 처리
+        koElements.forEach(el => el.style.display = 'none');
+        enElements.forEach(el => el.style.display = 'block');
+        toggleBtn.innerText = 'KR'; // 버튼은 '한국어로 변경' 버튼으로 표시됨
+    });
+
+    // 3. 사용자가 직접 언어 버튼(KR/EN)을 눌렀을 때 전환되는 기능
+    function toggleLanguage() {
+        const koElements = document.querySelectorAll('.lang-ko');
+        const enElements = document.querySelectorAll('.lang-en');
+        const toggleBtn = document.querySelector('.lang-toggle');
+
+        if (currentLang === 'ko') {
+            koElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = 'block');
+            toggleBtn.innerText = 'KR';
+            currentLang = 'en';
+        } else {
+            koElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'none');
+            toggleBtn.innerText = 'EN';
+            currentLang = 'ko';
         }
-        
-        // 4초(4000ms)마다 다음 슬라이드로 넘어감
-        setInterval(nextSlide, 4000);
-    </script>
+    }
+
+    // 4. 메인 배너 슬라이드 자동 전환 기능 (5장 순환)
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // 4초(4000ms)마다 다음 슬라이드로 넘어감
+    setInterval(nextSlide, 4000);
+</script>
 </body>
 </html>
