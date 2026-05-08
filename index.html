@@ -21,26 +21,20 @@
         .lang-toggle { margin-left: 40px; padding: 5px 10px; border: 1px solid #111; background: none; cursor: pointer; font-size: 0.8em; font-weight: bold; transition: all 0.3s; }
         .lang-toggle:hover { background-color: #111; color: #fff; }
 
-        /* 메인 배너 (Hero Section - 모델/제품 이미지 배경) */
-        .hero { 
-            height: 100vh; /* 화면 전체 높이 */
-            /* 배경 이미지 (고급스러운 패션/가방 느낌의 무료 이미지 주소 삽입) */
-            background-image: url('https://images.unsplash.com/photo-1584916201218-f4242ceb4809?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); 
-            background-size: cover; 
-            background-position: center; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            position: relative;
-        }
-        .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2); } /* 이미지를 살짝 어둡게 눌러 글씨를 돋보이게 함 */
-        .hero-content { position: relative; z-index: 1; color: #fff; }
-        .hero h2 { font-size: 3.5em; font-weight: 300; letter-spacing: 5px; margin-bottom: 20px; text-transform: uppercase; }
-        .hero p { font-size: 1.2em; font-weight: 300; letter-spacing: 2px; }
+        /* 메인 슬라이드 배너 (Hero Slider) */
+        .hero-slider { position: relative; height: 100vh; overflow: hidden; background-color: #000; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease-in-out; display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; cursor: pointer; z-index: 0; }
+        .slide.active { opacity: 1; z-index: 1; }
+        
+        /* 이미지를 살짝 어둡게 눌러 글씨를 돋보이게 함 */
+        .slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1; }
+        
+        .hero-content { position: relative; z-index: 2; color: #fff; }
+        .hero-content h2 { font-size: 3.5em; font-weight: 300; letter-spacing: 5px; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-content p { font-size: 1.2em; font-weight: 300; letter-spacing: 2px; }
 
         /* 섹션 공통 디자인 */
-        section { padding: 100px 20px; max-width: 1000px; margin: auto; text-align: center; }
+        section.content-section { padding: 100px 20px; max-width: 1000px; margin: auto; text-align: center; }
         h3 { font-size: 2em; color: #111; letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; font-weight: 400; border-bottom: 1px solid #111; display: inline-block; padding-bottom: 10px; }
         
         /* 브랜드 소개 (About) */
@@ -71,16 +65,36 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2 class="lang-ko">시간을 초월한 우아함</h2>
-            <h2 class="lang-en">Timeless Elegance</h2>
-            <p class="lang-ko">당신의 모든 순간을 완성하는 프렌치 하우스</p>
-            <p class="lang-en">A French house completing your every moment.</p>
-        </div>
-    </section>
+    <div class="hero-slider">
+        <a href="#collections" class="slide active" style="background-image: url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-content">
+                <h2 class="lang-ko">시간을 초월한 우아함</h2>
+                <h2 class="lang-en">Timeless Elegance</h2>
+                <p class="lang-ko">당신의 모든 순간을 완성하는 프렌치 하우스</p>
+                <p class="lang-en">A French house completing your every moment.</p>
+            </div>
+        </a>
+        
+        <a href="#collections" class="slide" style="background-image: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-content">
+                <h2 class="lang-ko">장인의 숨결이 깃든 걸작</h2>
+                <h2 class="lang-en">Masterpiece of Craftsmanship</h2>
+                <p class="lang-ko">타협하지 않는 퀄리티, 젤로아 슈즈 컬렉션</p>
+                <p class="lang-en">Uncompromising quality, Zeloa Shoes Collection</p>
+            </div>
+        </a>
 
-    <section id="about">
+        <a href="#collections" class="slide" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-content">
+                <h2 class="lang-ko">새로운 기준을 제시하다</h2>
+                <h2 class="lang-en">Setting a New Standard</h2>
+                <p class="lang-ko">일상을 예술로 만드는 젤로아의 미학</p>
+                <p class="lang-en">Zeloa's aesthetics turning everyday life into art</p>
+            </div>
+        </a>
+    </div>
+
+    <section id="about" class="content-section">
         <h3 class="lang-ko">브랜드 소개</h3>
         <h3 class="lang-en">La Maison</h3>
         <p class="about-text lang-ko">
@@ -91,7 +105,7 @@
         </p>
     </section>
 
-    <section id="collections">
+    <section id="collections" class="content-section">
         <h3 class="lang-ko">제품군 소개</h3>
         <h3 class="lang-en">Collections</h3>
         <div class="collections">
@@ -127,6 +141,7 @@
     </footer>
 
     <script>
+        // 1. 언어 전환 기능
         let currentLang = 'ko';
         function toggleLanguage() {
             const koElements = document.querySelectorAll('.lang-ko');
@@ -145,6 +160,19 @@
                 currentLang = 'ko';
             }
         }
+
+        // 2. 메인 배너 슬라이드 자동 전환 기능
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // 4초(4000ms)마다 다음 슬라이드로 넘어감
+        setInterval(nextSlide, 4000);
     </script>
 </body>
 </html>
