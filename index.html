@@ -92,29 +92,29 @@
 
         <div class="maison-story">
             <div class="story-block">
-                <img src="https://images.unsplash.com/photo-1510146758428-e5e4b17b8b6a?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Landscape of a historic French town like Saint-Junien">
+                <img src="https://images.unsplash.com/photo-1510146758428-e5e4b17b8b6a?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Saint-Junien Landscape">
                 <div class="story-text">
                     <div class="origin-title">1. The Cradle of Craft</div>
-                    <p class="about-text lang-ko">프랑스 중서부 리무쟁 지역, 천 년의 역사를 품은 가죽의 성지 생 쥐니앙(Saint-Junien)입니다. 비엔 강을 따라 흐르는 장인들의 정통성은 젤로아 가치의 뿌리가 되었습니다.</p>
+                    <p class="about-text lang-ko">프랑스 생 쥐니앙, 천 년의 역사를 품은 가죽의 성지입니다. 비엔 강을 따라 흐르는 장인들의 정통성은 젤로아 가치의 뿌리가 되었습니다.</p>
                     <p class="about-text lang-en">Saint-Junien, the historic cradle of French leather for a millennium. The legacy flowing along the Vienne River has become the root of ZELOA's values.</p>
                 </div>
             </div>
 
             <div class="story-block reverse">
-                <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Leather craft workshop atelier">
+                <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Atelier">
                 <div class="story-text">
                     <div class="origin-title">2. The Artisan's Atelier</div>
-                    <p class="about-text lang-ko">공방의 불빛은 밤낮없이 장인의 뜨거운 열정(Zèle)으로 타오릅니다. 한 점의 가죽에도 타협하지 않는 헌신이 깃든 젤로아만의 제작 방식을 고집합니다.</p>
-                    <p class="about-text lang-en">The light in our atelier burns day and night with the artisan's passion (Zèle). We insist on a process infused with uncompromising devotion in every single piece of leather.</p>
+                    <p class="about-text lang-ko">장인의 뜨거운 열정(Zèle)으로 타오르는 공방. 한 점의 가죽에도 타협하지 않는 헌신이 깃든 젤로아만의 제작 방식을 고집합니다.</p>
+                    <p class="about-text lang-en">Our atelier burns with the artisan's passion (Zèle). We insist on a process infused with uncompromising devotion in every single piece.</p>
                 </div>
             </div>
 
             <div class="story-block">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Modern luxury boutique interior">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Boutique">
                 <div class="story-text">
                     <div class="origin-title">3. The Modern Boutique</div>
-                    <p class="about-text lang-ko">전통의 숨결은 현대적인 감각과 만나 ZELOA 부티크로 완성되었습니다. 당신의 삶에 천사의 선물(Eloa)과 같은 우아함을 전하는 공간입니다.</p>
-                    <p class="about-text lang-en">The breath of tradition meets modern sensibility in the ZELOA boutique. A space delivering elegance akin to an angel's gift (Eloa) to your life.</p>
+                    <p class="about-text lang-ko">전통과 현대가 만나 ZELOA 부티크로 완성되었습니다. 당신의 삶에 천사의 선물(Eloa)과 같은 우아함을 전하는 공간입니다.</p>
+                    <p class="about-text lang-en">The breath of tradition meets modern sensibility. A space delivering elegance akin to an angel's gift (Eloa) to your life.</p>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
             <button class="tab-btn" onclick="showGallery('hats', this)">Hats</button>
             <button class="tab-btn" onclick="showGallery('gloves', this)">Gloves</button>
             <button class="tab-btn" onclick="showGallery('scarves', this)">Scarves & Ties</button>
-            <button class="tab-btn" onclick="showGallery('etc', this)">Essentials</button>
+            <button class="tab-btn" onclick="showGallery('etc', this)">Jewelry</button>
         </div>
         <div id="gallery" class="gallery-container"></div>
     </section>
@@ -145,12 +145,36 @@
         let currentLang = 'en';
 
         const products = {
-            'shoes': { m: 'Heritage Oxford', w: 'Eloa Stiletto', mi: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop' },
-            'bags': { m: 'Leather Wallet Case', w: 'Luxury Signature Tote', mi: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?q=80&w=800&auto=format&fit=crop' },
-            'hats': { m: 'Classic Wool Fedora', w: 'Wide-Brim Sun Hat', mi: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format&fit=crop' },
-            'gloves': { m: 'Artisan Leather Gloves', w: 'Winter Wool Gloves', mi: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format&fit=crop' },
-            'scarves': { m: 'Silk Necktie Selection', w: 'Pure Silk Scarf', mi: 'https://images.unsplash.com/photo-1598565793131-d602336338b2?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format&fit=crop' },
-            'etc': { m: 'Leather Belt', w: 'Celestial Accessories', mi: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1515562141207-7a18b5ce3377?q=80&w=800&auto=format&fit=crop' }
+            'shoes': { 
+                m: 'Heritage Loafer', w: 'Eloa Stiletto', 
+                mi: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format&fit=crop', 
+                wi: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop' 
+            },
+            'bags': { 
+                m: 'Minimalist Leather Wallet', w: 'Premium Lady Bag', 
+                mi: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format&fit=crop', 
+                wi: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop' 
+            },
+            'hats': { 
+                m: 'Trendy Newsboy Cap', w: 'Luxury Wide-Brim Hat', 
+                mi: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=800&auto=format&fit=crop', 
+                wi: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format&fit=crop' 
+            },
+            'gloves': { 
+                m: 'Polished Leather Gloves', w: 'Soft Shearling Gloves', 
+                mi: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format&fit=crop', 
+                wi: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format&fit=crop' 
+            },
+            'scarves': { 
+                m: 'Classic Silk Tie', w: 'Printed Silk Scarf', 
+                mi: 'https://images.unsplash.com/photo-1598565793131-d602336338b2?q=80&w=800&auto=format&fit=crop', 
+                wi: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format&fit=crop' 
+            },
+            'etc': { 
+                m: 'Minimalist Cuff Bracelet', w: 'No-Logo Eternal Ring', 
+                mi: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop', 
+                wi: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop' 
+            }
         };
 
         function showGallery(cat, btn) {
