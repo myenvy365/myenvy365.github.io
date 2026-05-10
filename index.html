@@ -21,7 +21,7 @@
         .logo-z { font-style: italic; font-size: 2.2rem; margin-right: 15px; }
         .logo-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
         .logo-maison { font-size: 0.5rem; letter-spacing: 4px; font-weight: normal; margin-bottom: 2px; }
-        .logo-main { font-size: 1.2rem; letter-spacing: 3px; font-weight: bold; text-transform: uppercase; }
+        .logo-main { font-size: 1.2rem; letter-spacing: 3px; font-weight: bold; text-transform: lowercase; }
         .logo-paris { font-size: 0.5rem; letter-spacing: 4px; font-weight: normal; margin-top: 2px; }
         
         nav a { margin-left: 35px; text-decoration: none; color: #333; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
@@ -50,8 +50,8 @@
 
         .gallery-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: auto; animation: fadeIn 0.8s ease forwards; }
         .gallery-item { text-align: left; overflow: hidden; }
-        .gallery-item img { width: 100%; height: 650px; object-fit: cover; transition: 0.8s ease; background-color: #f8f8f8; }
-        .gallery-item:hover img { transform: scale(1.02); }
+        .gallery-item img { width: 100%; height: 600px; object-fit: cover; transition: 0.8s ease; background-color: #f8f8f8; }
+        .gallery-item:hover img { transform: scale(1.03); }
         .gallery-item h4 { font-family: 'Playfair Display', serif; margin: 20px 0 8px; font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 400; }
         .gallery-item p { color: #888; font-size: 0.9rem; margin: 0; letter-spacing: 1.5px; text-transform: uppercase; }
 
@@ -68,7 +68,7 @@
             <div class="logo-text">
                 <span class="logo-maison">MAISON</span>
                 <span class="logo-main">ZELOA</span>
-                <span class="logo-paris">PARIS&SEOUL</span>
+                <span class="logo-paris">PARIS@SEOUL</span>
             </div>
         </a>
         <nav>
@@ -92,7 +92,7 @@
 
         <div class="maison-story">
             <div class="story-block">
-                <img src="https://images.unsplash.com/photo-1510146758428-e5e4b17b8b6a?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Landscape of Saint-Junien">
+                <img src="https://images.unsplash.com/photo-1510146758428-e5e4b17b8b6a?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Landscape of a historic French town like Saint-Junien">
                 <div class="story-text">
                     <div class="origin-title">1. The Cradle of Craft</div>
                     <p class="about-text lang-ko">프랑스 중서부 리무쟁 지역, 천 년의 역사를 품은 가죽의 성지 생 쥐니앙(Saint-Junien)입니다. 비엔 강을 따라 흐르는 장인들의 정통성은 젤로아 가치의 뿌리가 되었습니다.</p>
@@ -101,7 +101,7 @@
             </div>
 
             <div class="story-block reverse">
-                <img src="https://images.unsplash.com/photo-1590739293930-a03888367098?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Artisan hands working on leather">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Artisan hands working carefully with leather">
                 <div class="story-text">
                     <div class="origin-title">2. The Artisan's Atelier</div>
                     <p class="about-text lang-ko">공방의 불빛은 밤낮없이 장인의 뜨거운 열정(Zèle)으로 타오릅니다. 한 점의 가죽에도 타협하지 않는 헌신이 깃든 젤로아만의 제작 방식을 고집합니다.</p>
@@ -134,7 +134,7 @@
             <button class="tab-btn" onclick="showGallery('hats', this)">Hats</button>
             <button class="tab-btn" onclick="showGallery('gloves', this)">Gloves</button>
             <button class="tab-btn" onclick="showGallery('scarves', this)">Scarves & Ties</button>
-            <button class="tab-btn" onclick="showGallery('etc', this)">Jewelry</button>
+            <button class="tab-btn" onclick="showGallery('etc', this)">Essentials</button>
         </div>
         <div id="gallery" class="gallery-container"></div>
     </section>
@@ -145,41 +145,41 @@
         let currentLang = 'en';
 
         const products = {
-            // 신발: 모델 착용샷으로 교체
-            'shoes': { 
-                m: 'Heritage Men\'s Loafer', w: 'Eloa Women\'s Stiletto', 
-                mi: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=800&auto=format&fit=crop', 
-                wi: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop' 
+            shoes: {
+                m: 'Saint Loafer',
+                w: 'Eloa High Heel',
+                mi: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format&fit=crop',
+                wi: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop'
             },
-            // 가방: 고급 여성 백과 지갑으로 교체
-            'bags': { 
-                m: 'Lady Elegant Wallet', w: 'Signature Zèle Handbag', 
-                mi: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format&fit=crop', 
-                wi: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?q=80&w=800&auto=format&fit=crop' 
+            bags: {
+                m: 'Luxury Leather Wallet',
+                w: 'Signature Handbag',
+                mi: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format&fit=crop',
+                wi: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?q=80&w=800&auto=format&fit=crop'
             },
-            // 모자: 중절모와 럭셔리 플로피 햇으로 교체
-            'hats': { 
-                m: 'Classic Men\'s Fedora', w: 'Luxury Wide-Brim Floppy Hat', 
-                mi: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=800&auto=format&fit=crop', 
-                wi: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format&fit=crop' 
+            hats: {
+                m: 'Classic Felt Fedora',
+                w: 'Luxury Floppy Hat',
+                mi: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=800&auto=format&fit=crop',
+                wi: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format&fit=crop'
             },
-            // 장갑: 드라이빙 가죽장갑과 양털 모장갑으로 교체
-            'gloves': { 
-                m: 'Artisan Driving Leather Gloves', w: 'Soft Winter Shearling Gloves', 
-                mi: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format&fit=crop', 
-                wi: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format&fit=crop' 
+            gloves: {
+                m: 'Leather Driving Gloves',
+                w: 'Winter Wool Gloves',
+                mi: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format&fit=crop',
+                wi: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format&fit=crop'
             },
-            // 스카프: 넥타이와 스카프로 교체
-            'scarves': { 
-                m: 'Silk Necktie Selection', w: 'Pure Silk Patterned Scarf', 
-                mi: 'https://images.unsplash.com/photo-1598565793131-d602336338b2?q=80&w=800&auto=format&fit=crop', 
-                wi: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format&fit=crop' 
+            scarves: {
+                m: 'Silk Necktie Selection',
+                w: 'Pure Silk Scarf',
+                mi: 'https://images.unsplash.com/photo-1598565793131-d602336338b2?q=80&w=800&auto=format&fit=crop',
+                wi: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format&fit=crop'
             },
-            // 주얼리: 그대로 유지
-            'etc': { 
-                m: 'Minimalist Gold Cuff', w: 'Pure Eternal Band', 
-                mi: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop', 
-                wi: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop' 
+            etc: {
+                m: 'Leather Belt',
+                w: 'Celestial Accessories',
+                mi: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop',
+                wi: 'https://images.unsplash.com/photo-1515562141207-7a18b5ce3377?q=80&w=800&auto=format&fit=crop'
             }
         };
 
@@ -193,7 +193,7 @@
                 <div class="gallery-item">
                     <img src="${img}" alt="${name}" onerror="this.src='https://via.placeholder.com/600x800?text=ZELOA+Masterpiece'">
                     <h4>${name} (Pour ${gender})</h4>
-                    <p>Saint-Junien Selection</p>
+                    <p>Saint-Junien Edition</p>
                 </div>
             `;
             container.innerHTML = render(item.m, item.mi, 'Homme') + render(item.w, item.wi, 'Femme');
