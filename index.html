@@ -66,4 +66,183 @@
         h3 { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; border-bottom: 1px solid #111; display: inline-block; padding-bottom: 10px; }
         
         .origin-card { background-color: #fcfaf7; padding: 60px 40px; margin-bottom: 60px; border-radius: 2px; text-align: center; }
-        .origin-title { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.5rem;
+        .origin-title { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.5rem; margin-bottom: 20px; }
+        .about-text { line-height: 2.2; color: var(--text-sub); font-size: 1.1rem; word-break: keep-all; text-align: justify; }
+
+        /* 제품군 탭 메뉴 */
+        .collection-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; flex-wrap: wrap; }
+        .tab-btn { 
+            padding: 12px 25px; border: 1px solid #ddd; background: #fff; 
+            cursor: pointer; font-size: 0.85rem; letter-spacing: 1px; 
+            font-family: 'Playfair Display', serif; transition: 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover { background: #111; color: #fff; border-color: #111; }
+
+        /* 제품 갤러리 그리드 */
+        .gallery-container { 
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; 
+            max-width: 1100px; margin: auto; animation: fadeIn 0.8s ease forwards;
+        }
+        .gallery-item { text-align: left; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 550px; object-fit: cover; transition: 0.6s ease; }
+        .gallery-item:hover img { transform: scale(1.03); }
+        .gallery-item h4 { font-family: 'Playfair Display', serif; margin: 15px 0 5px; font-size: 1.2rem; }
+        .gallery-item p { color: #888; font-size: 0.9rem; margin: 0; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer { background-color: #111; color: #fff; text-align: center; padding: 60px 20px; font-size: 0.8em; letter-spacing: 1px; }
+
+        /* 초기 언어 설정 (영어) */
+        .lang-ko { display: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <span class="logo-z">Z</span>
+            <div class="logo-text">
+                <span class="logo-maison">MAISON</span>
+                <span class="logo-main">zeloa</span>
+                <span class="logo-paris">PARIS</span>
+            </div>
+        </a>
+        <nav>
+            <a href="#about"><span class="lang-ko">브랜드 소개</span><span class="lang-en">Maison</span></a>
+            <a href="#collections"><span class="lang-ko">제품군</span><span class="lang-en">Collections</span></a>
+            <button class="lang-toggle" onclick="toggleLanguage()">KR</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="lang-ko">시간을 초월한 우아함</h2>
+            <h2 class="lang-en">TIMELESS ELEGANCE</h2>
+            <p class="lang-ko">당신의 모든 순간을 완성하는 프렌치 하우스</p>
+            <p class="lang-en">A French house completing your every moment.</p>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h3 class="lang-ko">브랜드 스토리</h3>
+        <h3 class="lang-en">La Maison</h3>
+        
+        <div class="origin-card">
+            <div class="origin-title">The Heritage of Saint-Junien</div>
+            <p class="about-text lang-ko" style="text-align: center; margin-bottom: 30px;">
+                젤로아(ZELOA)는 프랑스 가죽 공예의 성지인 <b>생 쥐니앙(Saint-Junien)</b>의 작은 공방에서 시작되었습니다. 대를 이어 내려온 장인들의 정교한 손길은 젤로아가 추구하는 모든 가치의 뿌리입니다.
+            </p>
+            <p class="about-text lang-en" style="text-align: center; margin-bottom: 30px;">
+                ZELOA originated from a small workshop in <b>Saint-Junien</b>, France, a historic city renowned for its leather craftsmanship. The exquisite touch of artisans passed down through generations is the root of all values ZELOA pursues.
+            </p>
+
+            <div class="origin-title">Zèle & Eloa</div>
+            <p class="about-text lang-ko" style="text-align: center; margin-bottom: 0;">
+                열정과 지극한 헌신을 뜻하는 <b>'Zèle'</b>와 프랑스 서사시 속 천사 <b>'Eloa'</b>가 만났습니다. 장인의 숭고한 열정을 통해 고객에게 천사의 선물과 같은 가치를 전달하고자 하는 브랜드의 의지를 담고 있습니다.
+            </p>
+            <p class="about-text lang-en" style="text-align: center; margin-bottom: 0;">
+                The meeting of <b>'Zèle'</b> (passion and devotion) and <b>'Eloa'</b> (angel) symbolizes our commitment to delivering values akin to an angel's gift through the sublime passion of our artisans.
+            </p>
+        </div>
+
+        <p class="about-text lang-ko">
+            최고의 소재에 장인의 숨결을 불어넣어 대를 이어 물려주고 싶은 영원한 품격을 선사합니다. 진정한 아름다움을 향한 타협 없는 열정, 그것이 젤로아의 길입니다.
+        </p>
+        <p class="about-text lang-en">
+            By breathing the artisan's spirit into the finest materials, we offer an eternal elegance you will want to pass down through generations. An uncompromising passion for true beauty—that is the way of ZELOA.
+        </p>
+    </section>
+
+    <section id="collections" class="content-section" style="max-width: 1200px;">
+        <h3 class="lang-ko">제품군</h3>
+        <h3 class="lang-en">Collections</h3>
+        
+        <div class="collection-tabs">
+            <button class="tab-btn active" onclick="showGallery('men-shoes', this)">Men's Shoes</button>
+            <button class="tab-btn" onclick="showGallery('women-shoes', this)">Women's Shoes</button>
+            <button class="tab-btn" onclick="showGallery('bags', this)">Leather Goods</button>
+            <button class="tab-btn" onclick="showGallery('acc', this)">Accessories</button>
+        </div>
+
+        <div id="gallery" class="gallery-container">
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MAISON ZELOA PARIS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        // 제품 데이터 (남녀 신발 분리 및 잡화 상세)
+        const products = {
+            'men-shoes': [
+                { name_en: 'Heritage Oxford', name_ko: '헤리티지 옥스포드', img: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&w=800' },
+                { name_en: 'Artisan Loafer', name_ko: '아티잔 로퍼', img: 'https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&w=800' }
+            ],
+            'women-shoes': [
+                { name_en: 'Eloa Stiletto', name_ko: '엘로아 스틸레토', img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&w=800' },
+                { name_en: 'Celestial Heel', name_ko: '셀레스티얼 힐', img: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&w=800' }
+            ],
+            'bags': [
+                { name_en: 'Signature Tote', name_ko: '시그니처 토트', img: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?auto=format&w=800' },
+                { name_en: 'Craftsman Clutch', name_ko: '크래프트맨 클러치', img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&w=800' }
+            ],
+            'acc': [
+                { name_en: 'Saint-Junien Glove', name_ko: '생 쥐니앙 장갑', img: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?auto=format&w=800' },
+                { name_en: 'Silk Scarf', name_ko: '실크 스카프', img: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?auto=format&w=800' }
+            ]
+        };
+
+        function showGallery(category, btn) {
+            // 버튼 활성화 스타일 적용
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const container = document.getElementById('gallery');
+            container.innerHTML = ''; // 초기화
+
+            products[category].forEach(p => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.innerHTML = `
+                    <img src="${p.img}" alt="${p.name_en}">
+                    <h4>${currentLang === 'en' ? p.name_en : p.name_ko}</h4>
+                    <p>Maison Zeloa Collection</p>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function toggleLanguage() {
+            const koElements = document.querySelectorAll('.lang-ko');
+            const enElements = document.querySelectorAll('.lang-en');
+            const toggleBtn = document.querySelector('.lang-toggle');
+
+            if (currentLang === 'ko') {
+                koElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                toggleBtn.innerText = 'KR';
+                currentLang = 'en';
+            } else {
+                koElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                toggleBtn.innerText = 'EN';
+                currentLang = 'ko';
+            }
+            
+            // 현재 활성화된 카테고리의 텍스트도 업데이트
+            const activeTab = document.querySelector('.tab-btn.active');
+            const activeCat = activeTab.innerText.toLowerCase().includes('men') ? 'men-shoes' : 
+                             activeTab.innerText.toLowerCase().includes('women') ? 'women-shoes' :
+                             activeTab.innerText.toLowerCase().includes('leather') ? 'bags' : 'acc';
+            showGallery(activeCat, activeTab);
+        }
+
+        // 페이지 로드 시 첫 번째 카테고리 표시
+        window.onload = () => showGallery('men-shoes', document.querySelector('.tab-btn'));
+    </script>
+</body>
+</html>
