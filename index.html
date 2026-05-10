@@ -1,88 +1,381 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MAISON ZELOA PARIS&SEOUL</title>
+
     <style>
+
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@300;400&display=swap');
 
+
+
         :root {
+
             --bg-color: #ffffff;
+
             --text-main: #111111;
+
             --text-sub: #555555;
+
             --accent: #8b7355;
+
         }
 
+
+
         body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg-color); line-height: 1.6; scroll-behavior: smooth; }
+
         
+
         header { position: fixed; width: 100%; top: 0; padding: 25px 50px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background-color: rgba(255, 255, 255, 0.98); z-index: 1000; border-bottom: 1px solid #f2f2f2; }
+
         .logo { font-family: 'Playfair Display', serif; text-decoration: none; color: #000; display: flex; align-items: center; }
+
         .logo-z { font-style: italic; font-size: 2.2rem; margin-right: 15px; }
+
         .logo-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+
         .logo-maison { font-size: 0.5rem; letter-spacing: 4px; font-weight: normal; margin-bottom: 2px; }
+
         .logo-main { font-size: 1.2rem; letter-spacing: 3px; font-weight: bold; text-transform: lowercase; }
+
         .logo-paris { font-size: 0.5rem; letter-spacing: 4px; font-weight: normal; margin-top: 2px; }
+
         
+
         nav a { margin-left: 35px; text-decoration: none; color: #333; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
+
         nav a:hover { color: var(--accent); }
+
         .lang-toggle { margin-left: 45px; padding: 6px 14px; border: 1px solid #111; background: none; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
 
+
+
         .hero { height: 100vh; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 120px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover; color: #fff; text-align: center; }
+
         .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; letter-spacing: 6px; text-transform: uppercase; }
 
+
+
         section.content-section { padding: 140px 20px; max-width: 1000px; margin: auto; text-align: center; }
+
         h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 50px; text-transform: uppercase; border-bottom: 1px solid #111; display: inline-block; padding-bottom: 10px; }
+
         
+
         .maison-story { display: flex; flex-direction: column; gap: 80px; margin-bottom: 100px; }
+
         .story-block { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; text-align: justify; }
+
         .story-block.reverse { direction: rtl; }
+
         .story-block.reverse .story-text { direction: ltr; }
+
         .story-image { width: 100%; height: 450px; object-fit: cover; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); background-color: #f7f7f7; }
+
         
+
         .origin-card { background-color: #fcfaf7; padding: 70px 50px; margin-bottom: 80px; border-radius: 2px; text-align: center; border: 1px solid #f0efeb; }
+
         .origin-title { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.6rem; margin-bottom: 25px; }
+
         .about-text { line-height: 2.2; color: var(--text-sub); font-size: 1.1rem; word-break: keep-all; }
 
+
+
         .collection-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 60px; flex-wrap: wrap; }
+
         .tab-btn { padding: 14px 28px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.85rem; letter-spacing: 1.5px; font-family: 'Playfair Display', serif; transition: 0.3s; text-transform: uppercase; }
+
         .tab-btn.active, .tab-btn:hover { background: #111; color: #fff; border-color: #111; }
 
+
+
         .gallery-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: auto; animation: fadeIn 0.8s ease forwards; }
+
         .gallery-item { text-align: left; overflow: hidden; }
+
         .gallery-item img { width: 100%; height: 600px; object-fit: cover; transition: 0.8s ease; background-color: #f8f8f8; }
+
         .gallery-item:hover img { transform: scale(1.03); }
+
         .gallery-item h4 { font-family: 'Playfair Display', serif; margin: 20px 0 8px; font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 400; }
+
         .gallery-item p { color: #888; font-size: 0.9rem; margin: 0; letter-spacing: 1.5px; text-transform: uppercase; }
 
+
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
         footer { background-color: #111; color: #fff; text-align: center; padding: 80px 20px; font-size: 0.8em; letter-spacing: 2px; }
+
         .lang-ko { display: none; }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <header>
+
         <a href="#" class="logo">
+
             <span class="logo-z">Z</span>
+
             <div class="logo-text">
+
                 <span class="logo-maison">MAISON</span>
+
                 <span class="logo-main">ZELOA</span>
+
                 <span class="logo-paris">PARIS@SEOUL</span>
+
             </div>
+
         </a>
+
         <nav>
+
             <a href="#"><span class="lang-ko">메인</span><span class="lang-en">Home</span></a>
+
             <a href="#about"><span class="lang-ko">브랜드 스토리</span><span class="lang-en">Brand Story</span></a>
+
             <a href="#collections"><span class="lang-ko">컬렉션</span><span class="lang-en">Collections</span></a>
+
             <button class="lang-toggle" onclick="toggleLanguage()">KR</button>
+
         </nav>
+
     </header>
 
+
+
     <section id="main" class="hero">
+
         <div class="hero-content">
+
             <h2 class="lang-ko">시간을 초월한 우아함</h2>
+
             <h2 class="lang-en">TIMELESS ELEGANCE</h2>
+
         </div>
+
     </section>
+
+
+
+    <section id="about" class="content-section">
+
+        <h3 class="lang-ko">브랜드 스토리</h3>
+
+        <h3 class="lang-en">Brand Story</h3>
+
+
+
+        <div class="maison-story">
+
+            <div class="story-block">
+
+                <img src="https://images.unsplash.com/photo-1510146758428-e5e4b17b8b6a?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Landscape of a historic French town like Saint-Junien">
+
+                <div class="story-text">
+
+                    <div class="origin-title">1. The Cradle of Craft</div>
+
+                    <p class="about-text lang-ko">프랑스 중서부 리무쟁 지역, 천 년의 역사를 품은 가죽의 성지 생 쥐니앙(Saint-Junien)입니다. 비엔 강을 따라 흐르는 장인들의 정통성은 젤로아 가치의 뿌리가 되었습니다.</p>
+
+                    <p class="about-text lang-en">Saint-Junien, the historic cradle of French leather for a millennium. The legacy flowing along the Vienne River has become the root of ZELOA's values.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="story-block reverse">
+
+                <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Leather craft workshop atelier">
+
+                <div class="story-text">
+
+                    <div class="origin-title">2. The Artisan's Atelier</div>
+
+                    <p class="about-text lang-ko">공방의 불빛은 밤낮없이 장인의 뜨거운 열정(Zèle)으로 타오릅니다. 한 점의 가죽에도 타협하지 않는 헌신이 깃든 젤로아만의 제작 방식을 고집합니다.</p>
+
+                    <p class="about-text lang-en">The light in our atelier burns day and night with the artisan's passion (Zèle). We insist on a process infused with uncompromising devotion in every single piece of leather.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="story-block">
+
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Modern luxury boutique interior">
+
+                <div class="story-text">
+
+                    <div class="origin-title">3. The Modern Boutique</div>
+
+                    <p class="about-text lang-ko">전통의 숨결은 현대적인 감각과 만나 ZELOA 부티크로 완성되었습니다. 당신의 삶에 천사의 선물(Eloa)과 같은 우아함을 전하는 공간입니다.</p>
+
+                    <p class="about-text lang-en">The breath of tradition meets modern sensibility in the ZELOA boutique. A space delivering elegance akin to an angel's gift (Eloa) to your life.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="origin-card">
+
+            <p class="about-text lang-ko" style="text-align: center;">ZELOA는 장인의 열정(<b>Zèle</b>)과 천사(<b>Eloa</b>)의 만남으로 탄생했습니다.<br>프랑스 생 쥐니앙의 헌신적인 장인 정신을 당신에게 선물합니다.</p>
+
+            <p class="about-text lang-en" style="text-align: center;">ZELOA was born from the encounter of <b>Zèle</b> (passion) and <b>Eloa</b> (angel).<br>We present the devoted craftsmanship of Saint-Junien to you.</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="collections" class="content-section" style="max-width: 1200px;">
+
+        <h3 class="lang-ko">제품군</h3>
+
+        <h3 class="lang-en">Collections</h3>
+
+        <div class="collection-tabs">
+
+            <button class="tab-btn active" onclick="showGallery('shoes', this)">Shoes</button>
+
+            <button class="tab-btn" onclick="showGallery('bags', this)">Bags & Wallets</button>
+
+            <button class="tab-btn" onclick="showGallery('hats', this)">Hats</button>
+
+            <button class="tab-btn" onclick="showGallery('gloves', this)">Gloves</button>
+
+            <button class="tab-btn" onclick="showGallery('scarves', this)">Scarves & Ties</button>
+
+            <button class="tab-btn" onclick="showGallery('etc', this)">Essentials</button>
+
+        </div>
+
+        <div id="gallery" class="gallery-container"></div>
+
+    </section>
+
+
+
+    <footer><p>&copy; 2026 MAISON ZELOA PARIS. ALL RIGHTS RESERVED.</p></footer>
+
+
+
+    <script>
+
+        let currentLang = 'en';
+
+
+
+        const products = {
+
+            'shoes': { m: 'Heritage Oxford', w: 'Eloa Stiletto', mi: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop' },
+
+            'bags': { m: 'Leather Wallet Case', w: 'Luxury Signature Tote', mi: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?q=80&w=800&auto=format&fit=crop' },
+
+            'hats': { m: 'Classic Wool Fedora', w: 'Wide-Brim Sun Hat', mi: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format&fit=crop' },
+
+            'gloves': { m: 'Artisan Leather Gloves', w: 'Winter Wool Gloves', mi: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format&fit=crop' },
+
+            'scarves': { m: 'Silk Necktie Selection', w: 'Pure Silk Scarf', mi: 'https://images.unsplash.com/photo-1598565793131-d602336338b2?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format&fit=crop' },
+
+            'etc': { m: 'Leather Belt', w: 'Celestial Accessories', mi: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop', wi: 'https://images.unsplash.com/photo-1515562141207-7a18b5ce3377?q=80&w=800&auto=format&fit=crop' }
+
+        };
+
+
+
+        function showGallery(cat, btn) {
+
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            btn.classList.add('active');
+
+            const container = document.getElementById('gallery');
+
+            container.innerHTML = ''; 
+
+            const item = products[cat];
+
+            const render = (name, img, gender) => `
+
+                <div class="gallery-item">
+
+                    <img src="${img}" alt="${name}" onerror="this.src='https://via.placeholder.com/600x800?text=ZELOA+Masterpiece'">
+
+                    <h4>${name} (Pour ${gender})</h4>
+
+                    <p>Saint-Junien Edition</p>
+
+                </div>
+
+            `;
+
+            container.innerHTML = render(item.m, item.mi, 'Homme') + render(item.w, item.wi, 'Femme');
+
+        }
+
+
+
+        function toggleLanguage() {
+
+            const ko = document.querySelectorAll('.lang-ko');
+
+            const en = document.querySelectorAll('.lang-en');
+
+            const btn = document.querySelector('.lang-toggle');
+
+            if (currentLang === 'en') {
+
+                ko.forEach(el => el.style.display = 'block');
+
+                en.forEach(el => el.style.display = 'none');
+
+                btn.innerText = 'EN';
+
+                currentLang = 'ko';
+
+            } else {
+
+                ko.forEach(el => el.style.display = 'none');
+
+                en.forEach(el => el.style.display = 'block');
+
+                btn.innerText = 'KR';
+
+                currentLang = 'en';
+
+            }
+
+        }
+
+        window.onload = () => showGallery('shoes', document.querySelector('.tab-btn'));
+
+    </script>
+
+</body>
+
 </html>
