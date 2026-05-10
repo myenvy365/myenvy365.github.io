@@ -36,4 +36,160 @@
         section.content-section { padding: 120px 20px; max-width: 1000px; margin: auto; text-align: center; }
         h3 { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; border-bottom: 1px solid #111; display: inline-block; padding-bottom: 10px; }
         
-        .origin-card { background-color: #fcfaf7; padding: 60px 40px
+        .origin-card { background-color: #fcfaf7; padding: 60px 40px; margin-bottom: 60px; border-radius: 2px; }
+        .origin-title { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.5rem; margin-bottom: 20px; }
+        .about-text { line-height: 2.2; color: var(--text-sub); font-size: 1.1rem; word-break: keep-all; text-align: justify; }
+
+        /* 컬렉션 탭 메뉴 */
+        .collection-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn { padding: 15px 30px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; font-family: 'Playfair Display', serif; }
+        .tab-btn:hover, .tab-btn.active { background: #111; color: #fff; border-color: #111; }
+
+        /* 제품 갤러리 그리드 */
+        .gallery-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; animation: fadeIn 0.8s ease; }
+        .gallery-item { text-align: left; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 500px; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.03); }
+        .gallery-item h4 { margin: 15px 0 5px; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+        .gallery-item p { margin: 0; color: #888; font-size: 0.9rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer { background-color: #111; color: #fff; text-align: center; padding: 60px 20px; font-size: 0.8em; letter-spacing: 1px; }
+        .lang-ko { display: none; } /* 기본 영어 설정 */
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <span class="logo-z">Z</span>
+            <div class="logo-text">
+                <span class="logo-maison">MAISON</span>
+                <span class="logo-main">zeloa</span>
+                <span class="logo-paris">PARIS</span>
+            </div>
+        </a>
+        <nav>
+            <a href="#about"><span class="lang-ko">소개</span><span class="lang-en">Maison</span></a>
+            <a href="#collections"><span class="lang-ko">컬렉션</span><span class="lang-en">Collections</span></a>
+            <button class="lang-toggle" onclick="toggleLanguage()">KR</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="lang-ko">시간을 초월한 우아함</h2>
+            <h2 class="lang-en">TIMELESS ELEGANCE</h2>
+            <p class="lang-ko">당신의 모든 순간을 완성하는 프렌치 하우스</p>
+            <p class="lang-en">A French house completing your every moment.</p>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h3 class="lang-ko">브랜드 스토리</h3>
+        <h3 class="lang-en">La Maison</h3>
+        <div class="origin-card">
+            <div class="origin-title">The Origin of ZELOA</div>
+            <p class="about-text lang-ko" style="text-align: center;">
+                ZELOA는 열정을 뜻하는 <b>'Zèle'</b>와 천사 <b>'Eloa'</b>의 이름이 만나 탄생했습니다. 장인의 숭고한 열정을 통해 천사의 선물과 같은 가치를 전달하고자 합니다.
+            </p>
+            <p class="about-text lang-en" style="text-align: center;">
+                ZELOA was born from the encounter of <b>'Zèle'</b> (passion) and <b>'Eloa'</b> (angel). It embodies the brand's commitment to delivering values akin to an angel's gift.
+            </p>
+        </div>
+        <p class="about-text lang-ko">프랑스 남부의 장인 정신과 최고의 소재가 만나 대를 이어 물려주고 싶은 영원한 품격을 선사합니다.</p>
+        <p class="about-text lang-en">ZELOA offers an eternal elegance designed to be passed down through generations by breathing the artisan's spirit into the finest materials.</p>
+    </section>
+
+    <section id="collections" class="content-section" style="max-width: 1200px;">
+        <h3 class="lang-ko">제품군</h3>
+        <h3 class="lang-en">Collections</h3>
+        
+        <div class="collection-tabs">
+            <button class="tab-btn active" onclick="showCategory('men-shoes', this)">Footwear (Men)</button>
+            <button class="tab-btn" onclick="showCategory('women-shoes', this)">Footwear (Women)</button>
+            <button class="tab-btn" onclick="showCategory('bags', this)">Leather Goods</button>
+            <button class="tab-btn" onclick="showCategory('acc', this)">Accessories</button>
+        </div>
+
+        <div id="gallery" class="gallery-container">
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MAISON ZELOA PARIS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        // 제품 데이터 (남녀 신발 분리 및 잡화 상세)
+        const products = {
+            'men-shoes': [
+                { en: 'Heritage Oxford', ko: '헤리티지 옥스포드', img: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&w=800' },
+                { en: 'Artisan Loafer', ko: '아티잔 로퍼', img: 'https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&w=800' }
+            ],
+            'women-shoes': [
+                { en: 'Eloa Stiletto', ko: '엘로아 스틸레토', img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&w=800' },
+                { en: 'Celestial Heel', ko: '셀레스티얼 힐', img: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&w=800' }
+            ],
+            'bags': [
+                { en: 'Zèle Tote Bag', ko: '젤 토트백', img: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?auto=format&w=800' },
+                { en: 'Maison Clutch', ko: '메종 클러치', img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&w=800' }
+            ],
+            'acc': [
+                { en: 'Silk Scarf', ko: '실크 스카프', img: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?auto=format&w=800' },
+                { en: 'Wool Fedora & Gloves', ko: '울 페도라 & 장갑', img: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?auto=format&w=800' }
+            ]
+        };
+
+        function showCategory(cat, btn) {
+            // 버튼 활성화 스타일
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const container = document.getElementById('gallery');
+            container.innerHTML = ''; 
+
+            products[cat].forEach(p => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.innerHTML = `
+                    <img src="${p.img}">
+                    <h4>${currentLang === 'en' ? p.en : p.ko}</h4>
+                    <p>Maison Zeloa Selection</p>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function toggleLanguage() {
+            const koElements = document.querySelectorAll('.lang-ko');
+            const enElements = document.querySelectorAll('.lang-en');
+            const toggleBtn = document.querySelector('.lang-toggle');
+
+            if (currentLang === 'ko') {
+                koElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                toggleBtn.innerText = 'KR';
+                currentLang = 'en';
+            } else {
+                koElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                toggleBtn.innerText = 'EN';
+                currentLang = 'ko';
+            }
+            // 언어 변경 시 갤러리도 다시 그림
+            const activeTab = document.querySelector('.tab-btn.active');
+            const activeCat = activeTab.innerText.toLowerCase().includes('men') ? 'men-shoes' : 
+                             activeTab.innerText.toLowerCase().includes('women') ? 'women-shoes' :
+                             activeTab.innerText.toLowerCase().includes('leather') ? 'bags' : 'acc';
+            showCategory(activeCat, activeTab);
+        }
+
+        // 초기 화면 설정 (남성 신발부터)
+        window.onload = () => showCategory('men-shoes', document.querySelector('.tab-btn'));
+    </script>
+</body>
+</html>
