@@ -15,8 +15,9 @@
         }
 
         body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg-color); line-height: 1.6; scroll-behavior: smooth; }
-        header { position: fixed; width: 100%; top: 0; padding: 20px 50px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background-color: rgba(255, 255, 255, 0.95); z-index: 1000; border-bottom: 1px solid #eee; }
         
+        /* 헤더 네비게이션: Main, About, Collections */
+        header { position: fixed; width: 100%; top: 0; padding: 20px 50px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background-color: rgba(255, 255, 255, 0.95); z-index: 1000; border-bottom: 1px solid #eee; }
         .logo { font-family: 'Playfair Display', serif; text-decoration: none; color: #000; display: flex; align-items: center; }
         .logo-z { font-style: italic; font-size: 2.2rem; margin-right: 15px; }
         .logo-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
@@ -24,11 +25,13 @@
         .logo-main { font-size: 1.2rem; letter-spacing: 3px; font-weight: bold; text-transform: lowercase; }
         .logo-paris { font-size: 0.5rem; letter-spacing: 4px; font-weight: normal; margin-top: 2px; }
         
-        nav a { margin-left: 30px; text-decoration: none; color: #333; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+        nav a { margin-left: 30px; text-decoration: none; color: #333; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 400; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
         .lang-toggle { margin-left: 40px; padding: 5px 12px; border: 1px solid #111; background: none; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
 
+        /* 섹션별 레이아웃 */
         .hero { height: 100vh; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 100px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover; color: #fff; text-align: center; }
-        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 300; letter-spacing: 4px; margin-bottom: 15px; text-transform: uppercase; }
+        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; letter-spacing: 5px; margin-bottom: 15px; text-transform: uppercase; }
 
         section.content-section { padding: 120px 20px; max-width: 900px; margin: auto; text-align: center; }
         h3 { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; border-bottom: 1px solid #111; display: inline-block; padding-bottom: 10px; }
@@ -37,21 +40,21 @@
         .origin-title { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.5rem; margin-bottom: 20px; }
         .about-text { line-height: 2.2; color: var(--text-sub); font-size: 1.1rem; word-break: keep-all; text-align: justify; }
 
+        /* 컬렉션 탭 및 갤러리 */
         .collection-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; flex-wrap: wrap; }
-        .tab-btn { padding: 12px 25px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.85rem; letter-spacing: 1px; font-family: 'Playfair Display', serif; transition: 0.3s; }
+        .tab-btn { padding: 12px 20px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.8rem; letter-spacing: 1px; font-family: 'Playfair Display', serif; transition: 0.3s; text-transform: uppercase; }
         .tab-btn.active, .tab-btn:hover { background: #111; color: #fff; border-color: #111; }
 
         .gallery-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: auto; animation: fadeIn 0.8s ease forwards; }
         .gallery-item { text-align: left; overflow: hidden; }
         .gallery-item img { width: 100%; height: 600px; object-fit: cover; transition: 0.6s ease; background-color: #f0f0f0; }
-        .gallery-item:hover img { transform: scale(1.03); }
         .gallery-item h4 { font-family: 'Playfair Display', serif; margin: 15px 0 5px; font-size: 1.3rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .gallery-item p { color: #888; font-size: 0.9rem; margin: 0; letter-spacing: 1px; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         footer { background-color: #111; color: #fff; text-align: center; padding: 60px 20px; font-size: 0.8em; letter-spacing: 1px; }
         
-        /* 한국어 요소는 기본적으로 숨김 처리 */
+        /* 기본 영어 설정 (한국어 숨김) */
         .lang-ko { display: none; }
     </style>
 </head>
@@ -67,13 +70,14 @@
             </div>
         </a>
         <nav>
-            <a href="#about"><span class="lang-ko">브랜드 소개</span><span class="lang-en">Maison</span></a>
-            <a href="#collections"><span class="lang-ko">제품군</span><span class="lang-en">Collections</span></a>
+            <a href="#"><span class="lang-ko">메인</span><span class="lang-en">Main</span></a>
+            <a href="#about"><span class="lang-ko">브랜드 스토리</span><span class="lang-en">About</span></a>
+            <a href="#collections"><span class="lang-ko">컬렉션</span><span class="lang-en">Collections</span></a>
             <button class="lang-toggle" onclick="toggleLanguage()">KR</button>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="main" class="hero">
         <div class="hero-content">
             <h2 class="lang-ko">시간을 초월한 우아함</h2>
             <h2 class="lang-en">TIMELESS ELEGANCE</h2>
@@ -84,7 +88,7 @@
 
     <section id="about" class="content-section">
         <h3 class="lang-ko">브랜드 스토리</h3>
-        <h3 class="lang-en">La Maison</h3>
+        <h3 class="lang-en">About the Maison</h3>
         <div class="origin-card">
             <div class="origin-title">The Heritage of Saint-Junien</div>
             <p class="about-text lang-ko" style="text-align: center; margin-bottom: 30px;">
@@ -101,16 +105,10 @@
                 The meeting of <b>'Zèle'</b> (passion and devotion) and <b>'Eloa'</b> (angel) symbolizes our commitment to delivering values akin to an angel's gift through the sublime passion of our artisans.
             </p>
         </div>
-        <p class="about-text lang-ko">
-            최고의 소재에 장인의 숨결을 불어넣어 대를 이어 물려주고 싶은 영원한 품격을 선사합니다. 진정한 아름다움을 향한 타협 없는 열정, 그것이 젤로아의 길입니다.
-        </p>
-        <p class="about-text lang-en">
-            By breathing the artisan's spirit into the finest materials, we offer an eternal elegance you will want to pass down through generations. An uncompromising passion for true beauty—that is the way of ZELOA.
-        </p>
     </section>
 
     <section id="collections" class="content-section" style="max-width: 1200px;">
-        <h3 class="lang-ko">제품군</h3>
+        <h3 class="lang-ko">컬렉션</h3>
         <h3 class="lang-en">Collections</h3>
         <div class="collection-tabs">
             <button class="tab-btn active" onclick="showGallery('shoes', this)">Shoes</button>
@@ -126,50 +124,23 @@
     <footer><p>&copy; 2026 MAISON ZELOA PARIS. ALL RIGHTS RESERVED.</p></footer>
 
     <script>
-        // 무조건 영어(en)로 시작
         let currentLang = 'en';
 
         const products = {
-            'shoes': {
-                m_name: 'Heritage Loafer', w_name: 'Eloa Pumps',
-                m_img: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format',
-                w_img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format'
-            },
-            'bags': {
-                m_name: 'Artisan Briefcase', w_name: 'Zele Signature Tote',
-                m_img: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=800&auto=format',
-                w_img: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?q=80&w=800&auto=format'
-            },
-            'hats': {
-                m_name: 'Classic Fedora', w_name: 'Elegant Wool Cloche',
-                m_img: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=800&auto=format',
-                w_img: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format'
-            },
-            'gloves': {
-                m_name: 'Driving Leather Gloves', w_name: 'Evening Silk Gloves',
-                m_img: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format',
-                w_img: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format'
-            },
-            'scarves': {
-                m_name: 'Cashmere Winter Scarf', w_name: 'Saint-Junien Silk Scarf',
-                m_img: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=800&auto=format',
-                w_img: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format'
-            },
-            'etc': {
-                m_name: 'Premium Card Holder', w_name: 'Handcrafted Leather Belt',
-                m_img: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format',
-                w_img: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format'
-            }
+            'shoes': { m: 'Heritage Loafer', w: 'Eloa Pumps', mi: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format', wi: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format' },
+            'bags': { m: 'Artisan Briefcase', w: 'Zele Signature Tote', mi: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=800&auto=format', wi: 'https://images.unsplash.com/photo-1584917033904-491a7bc20862?q=80&w=800&auto=format' },
+            'hats': { m: 'Classic Fedora', w: 'Elegant Wool Cloche', mi: 'https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=800&auto=format', wi: 'https://images.unsplash.com/photo-1575425186171-46039ea30e70?q=80&w=800&auto=format' },
+            'gloves': { m: 'Driving Leather Gloves', w: 'Evening Silk Gloves', mi: 'https://images.unsplash.com/photo-1533158017006-258102377464?q=80&w=800&auto=format', wi: 'https://images.unsplash.com/photo-1601924614132-8354c00f7358?q=80&w=800&auto=format' },
+            'scarves': { m: 'Cashmere Winter Scarf', w: 'Saint-Junien Silk Scarf', mi: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=800&auto=format', wi: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa82?q=80&w=800&auto=format' },
+            'etc': { m: 'Premium Card Holder', w: 'Handcrafted Leather Belt', mi: 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800&auto=format', wi: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format' }
         };
 
-        function showGallery(category, btn) {
+        function showGallery(cat, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             const container = document.getElementById('gallery');
             container.innerHTML = ''; 
-
-            const item = products[category];
+            const item = products[cat];
             const render = (name, img, gender) => `
                 <div class="gallery-item">
                     <img src="${img}" alt="${name}">
@@ -177,14 +148,13 @@
                     <p>Maison Zeloa Exclusive</p>
                 </div>
             `;
-            container.innerHTML = render(item.m_name, item.m_img, 'Homme') + render(item.w_name, item.w_img, 'Femme');
+            container.innerHTML = render(item.m, item.mi, 'Homme') + render(item.w, item.wi, 'Femme');
         }
 
         function toggleLanguage() {
             const ko = document.querySelectorAll('.lang-ko');
             const en = document.querySelectorAll('.lang-en');
             const btn = document.querySelector('.lang-toggle');
-
             if (currentLang === 'en') {
                 ko.forEach(el => el.style.display = 'block');
                 en.forEach(el => el.style.display = 'none');
@@ -197,7 +167,6 @@
                 currentLang = 'en';
             }
         }
-
         window.onload = () => showGallery('shoes', document.querySelector('.tab-btn'));
     </script>
 </body>
