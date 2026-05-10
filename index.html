@@ -31,7 +31,6 @@
         .hero { height: 100vh; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 120px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover; color: #fff; text-align: center; }
         .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; letter-spacing: 6px; text-transform: uppercase; }
 
-        /* The Maison Section - Visual Storytelling */
         section.content-section { padding: 140px 20px; max-width: 1000px; margin: auto; text-align: center; }
         h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 50px; text-transform: uppercase; border-bottom: 1px solid #111; display: inline-block; padding-bottom: 10px; }
         
@@ -39,13 +38,12 @@
         .story-block { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; text-align: justify; }
         .story-block.reverse { grid-template-columns: 1fr 1fr; direction: rtl; }
         .story-block.reverse .story-text { direction: ltr; }
-        .story-image { width: 100%; height: 400px; object-fit: cover; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .story-image { width: 100%; height: 450px; object-fit: cover; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); background-color: #f7f7f7; }
         
         .origin-card { background-color: #fcfaf7; padding: 70px 50px; margin-bottom: 80px; border-radius: 2px; text-align: center; border: 1px solid #f0efeb; }
         .origin-title { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.6rem; margin-bottom: 25px; }
         .about-text { line-height: 2.2; color: var(--text-sub); font-size: 1.1rem; word-break: keep-all; }
 
-        /* Collection Tabs & Gallery */
         .collection-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 60px; flex-wrap: wrap; }
         .tab-btn { padding: 14px 28px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.85rem; letter-spacing: 1.5px; font-family: 'Playfair Display', serif; transition: 0.3s; text-transform: uppercase; }
         .tab-btn.active, .tab-btn:hover { background: #111; color: #fff; border-color: #111; }
@@ -59,7 +57,6 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
         footer { background-color: #111; color: #fff; text-align: center; padding: 80px 20px; font-size: 0.8em; letter-spacing: 2px; }
-        
         .lang-ko { display: none; }
     </style>
 </head>
@@ -95,29 +92,29 @@
 
         <div class="maison-story">
             <div class="story-block">
-                <img src="https://images.unsplash.com/photo-1565670831195-717365?q=80&w=800&auto=format&fit=crop" class="story-image" alt="Historic view of Saint-Junien, France">
+                <img src="https://images.unsplash.com/photo-1508933554032-4735f496929f?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Landscape of a historic French town like Saint-Junien">
                 <div class="story-text">
                     <div class="origin-title">1. The Cradle of Craft</div>
-                    <p class="about-text lang-ko">천 년의 역사를 품은 프랑스 가죽의 성지, 생 쥐니앙(Saint-Junien). 비엔 강을 따라 형성된 이 고즈넉한 도시의 풍경은 젤로아가 추구하는 고귀한 가치의 고향입니다.</p>
-                    <p class="about-text lang-en">Saint-Junien, the historic cradle of French leather for a millennium. The serene landscape along the Vienne River is the spiritual home of the values ZELOA pursues.</p>
+                    <p class="about-text lang-ko">프랑스 중서부 리무쟁 지역, 천 년의 역사를 품은 가죽의 성지 생 쥐니앙(Saint-Junien)입니다. 비엔 강을 따라 흐르는 장인들의 정통성은 젤로아 가치의 뿌리가 되었습니다.</p>
+                    <p class="about-text lang-en">Saint-Junien, the historic cradle of French leather for a millennium. The legacy flowing along the Vienne River has become the root of ZELOA's values.</p>
                 </div>
             </div>
 
             <div class="story-block reverse">
-                <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format&fit=crop" class="story-image" alt="Artisan working in leather workshop">
+                <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Leather craft workshop atelier">
                 <div class="story-text">
                     <div class="origin-title">2. The Artisan's Atelier</div>
-                    <p class="about-text lang-ko">대를 이어 내려온 무두질 기법과 타협하지 않는 원칙. 젤로아의 모든 제품은 생 쥐니앙 공방의 집요한 장인 정신(Zèle)을 통해 완성됩니다.</p>
-                    <p class="about-text lang-en">Tanning techniques passed down for generations and uncompromising principles. Every ZELOA masterpiece is crafted through the persistent artisan spirit (Zèle) of our Saint-Junien workshop.</p>
+                    <p class="about-text lang-ko">공방의 불빛은 밤낮없이 장인의 뜨거운 열정(Zèle)으로 타오릅니다. 한 점의 가죽에도 타협하지 않는 헌신이 깃든 젤로아만의 제작 방식을 고집합니다.</p>
+                    <p class="about-text lang-en">The light in our atelier burns day and night with the artisan's passion (Zèle). We insist on a process infused with uncompromising devotion in every single piece of leather.</p>
                 </div>
             </div>
 
             <div class="story-block">
-                <img src="https://images.unsplash.com/photo-1541976844346-f18aeac57b06?q=80&w=800&auto=format&fit=crop" class="story-image" alt="Luxury Maison ZELOA boutique interior">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" class="story-image" alt="Modern luxury boutique interior">
                 <div class="story-text">
                     <div class="origin-title">3. The Modern Boutique</div>
-                    <p class="about-text lang-ko">생 쥐니앙의 숨결이 현대적인 파리의 우아함과 만났습니다. ZELOA 부티크는 천사의 선물(Eloa)과 같은 가치를 당신에게 전달하는 고귀한 공간입니다.</p>
-                    <p class="about-text lang-en">The breath of Saint-Junien meets modern Parisian elegance. The ZELOA boutique is a space that delivers values akin to an angel's gift (Eloa) to you.</p>
+                    <p class="about-text lang-ko">전통의 숨결은 현대적인 감각과 만나 ZELOA 부티크로 완성되었습니다. 당신의 삶에 천사의 선물(Eloa)과 같은 우아함을 전하는 공간입니다.</p>
+                    <p class="about-text lang-en">The breath of tradition meets modern sensibility in the ZELOA boutique. A space delivering elegance akin to an angel's gift (Eloa) to your life.</p>
                 </div>
             </div>
         </div>
